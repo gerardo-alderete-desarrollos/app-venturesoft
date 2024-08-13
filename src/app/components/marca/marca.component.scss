@@ -1,0 +1,117 @@
+.header-marcas{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.title-marcas{
+  text-align: start;
+}
+
+.list-marcas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+
+
+  .list-marcas-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    & img {
+      height: 100px;
+      width: 100px;
+    }
+}
+
+.list-marca-detail{
+  display: flex;
+  flex-direction: row;
+  & span{
+    margin-right: 15px;
+  }
+}
+
+.actions-marcas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-list {
+  margin-right: 10px;
+  width:20px; 
+  height:20px; 
+  fill:blue;
+  cursor: pointer;
+  &.active{
+    fill: white;
+    background-color: blue;
+    border: 8px solid blue;
+  }
+}
+
+.icon-grid {
+  margin-right: 10px; 
+  width: 20px;
+  height: 20px;
+  fill:blue;
+  cursor: pointer;
+  &.active{
+    fill: white;
+    background-color: blue;
+    border: 8px solid blue;
+  }
+}
+
+
+.container-more-coupons{
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+@media (min-width: 370px) {
+  .header-marcas{
+    flex-direction: column;
+  }
+  .title-marcas{
+    text-align: center;
+  }
+  .list-marca-detail{
+    flex-direction: column;
+
+  } 
+}
+
+@media (min-width: 576px) {
+  .header-marcas{
+    flex-direction: row;
+  }
+  .title-marcas{
+    text-align: start; 
+  }
+}
+
+@media (min-width: 768px) {
+  .list-marca-detail{
+    flex-direction: row;
+ 
+  } 
+}
+

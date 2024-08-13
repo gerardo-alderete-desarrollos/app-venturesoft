@@ -1,0 +1,37 @@
+<div>
+    <div class="sidenav bg-detail">
+        <div class="login-main-text">
+            <h2>{{('title_login' | i18n) | titlecase}}</h2>
+            <p>{{('subtitle_login' | i18n) | titlecase}}</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="login-form">
+            <form [formGroup]="fgLogin">
+                <div class="group">
+                    <label>{{('label_user' | i18n) | titlecase}}*</label>
+                    <input type="text" placeholder="Usuario" formControlName="user" [class.error]="validUser">
+                    @if (validUser)
+                    {
+                    <small class="error">{{('msg_error_user' | i18n) | titlecase}}</small>
+                    }
+                </div>
+                <div class="group">
+                    <label>{{('label_password' | i18n) | titlecase}}</label>
+                    <input type="password" placeholder="Password" formControlName="password"
+                        [class.error]="validPassword">
+                    @if (validPassword)
+                    {
+                    <small class="error">{{('msg_error_password' | i18n) | titlecase}}</small>
+                    }
+                </div>
+                <div class="container-send">
+                    <button class="btn-primary" [disabled]="fgLogin.invalid" (click)="goToHome()">{{('send' | i18n) |
+                        titlecase}}</button>
+                </div>
+            </form>
+            <app-select-languague />
+        </div>
+    </div>
+
+</div>

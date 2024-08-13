@@ -1,0 +1,47 @@
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    background-color: white;
+  }
+
+.card-img{
+  width: 100%;
+  height: 150px;
+  border-radius: 15px;
+}
+
+.card-marca {
+  font-size: small;
+  font-weight: bolder;
+  opacity: 0.4;
+}
+
+.card-detail{
+  font-size: larger;
+  font-weight: bolder;
+  width: 235px;
+
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.container-card {
+  padding: 2px 16px;
+}
+
+@media (min-width: 370px) {
+  .card {
+    width: 95%;
+  }
+  .card-img-circle{
+    right: -380px;
+  }
+}

@@ -1,0 +1,54 @@
+<div class="container">
+    <h1 class="text-center">{{ ('title_table' | i18n) | firstUpperCase}}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>{{ ('table_header_2' | i18n) | firstUpperCase }}</th>
+                <th>{{ ('table_header_3' | i18n) | firstUpperCase }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ ('table_row_1' | i18n) | firstUpperCase }}</td>
+                <td>
+                    <input type="checkbox" class="icon-check" checked disabled>
+                </td>
+                <td>
+                    <input type="checkbox" class="icon-check" checked disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ ('table_row_2' | i18n) | firstUpperCase }}</td>
+                <td></td>
+                <td>
+                    <input type="checkbox" class="icon-check" checked disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ ('table_row_3' | i18n) | firstUpperCase }}</td>
+                <td></td>
+                <td>
+                    <input type="checkbox" class="icon-check" checked disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ ('table_row_4' | i18n) | firstUpperCase }}</td>
+                <td></td>
+                <td>
+                    <input type="checkbox" class="icon-check" checked disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ ('table_row_5' | i18n) | firstUpperCase }}</td>
+                <td></td>
+                <td>
+                    <input type="checkbox" class="icon-check" checked disabled>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container-button-modal">
+        <app-modal-card />
+    </div>
+</div>

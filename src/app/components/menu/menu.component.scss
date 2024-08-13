@@ -1,0 +1,28 @@
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 10;
+    font-weight: 100;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 30px;
+    background-color: ghostwhite;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    // Empty badges collapse automatically
+    &:empty {
+      display: none;
+    }
+
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+    &.active{
+      background-color: black;
+      color: white;
+    }
+  }

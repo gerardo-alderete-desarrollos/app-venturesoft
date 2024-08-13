@@ -1,0 +1,13 @@
+<div class="container">
+    <h2 class="color-white text-center">{{ ('title_detail' | i18n) | firstUpperCase }}</h2>
+
+    <div class="grid-marcas">
+        @for (m of marcas; track marcas) {
+        <app-card-marca [marca]="m" [buttonSettings]="{ class: 'btn-info', label: 'cash_back'}" />
+        }
+    </div>
+
+    <div class="container-button-modal">
+        <app-modal-card />
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="card">
+    <img class="card-img" [src]="detailMarca?.imagen |img" alt="Imagen marca">
+    <div class="container-card">
+        <button [class]="settings?.class">{{( settings?.label | i18n) | titlecase}}</button>
+        <p class="card-marca">{{detailMarca?.nombreMarca}}</p>
+        <p class="card-detail">{{detailMarca?.['descripción']}}</p>
+        <button class="btn-flat">{{('get_coupon' | i18n) | titlecase}}</button>
+    </div>
+</div>
