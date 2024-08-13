@@ -8,11 +8,11 @@ export class AuthGuard implements CanMatch {
   canMatch(
     route: Route,
     segments: UrlSegment[]): MaybeAsync<GuardResult> {
-    //if( window.localStorage.getItem('isLogged') ) {
+    if( window.localStorage.getItem('isLogged') ) {
       return true
-    //}
+    }
     
-    //return this._router.navigateByUrl('login');
+    return this._router.navigateByUrl('login');
   }
 
   constructor(private _router: Router){}

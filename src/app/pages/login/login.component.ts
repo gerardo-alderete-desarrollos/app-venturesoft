@@ -19,12 +19,12 @@ export class LoginComponent {
   });
 
   constructor(private _fb: FormBuilder, private router: Router){
-    //window.localStorage.removeItem('isLogged');
+    window.localStorage.removeItem('isLogged');
 
   }
 
   goToHome(){
-    //window.localStorage.setItem('isLogged', 'true'); 
+    window.localStorage.setItem('isLogged', 'true'); 
     this.router.navigateByUrl('home');
   }
 
