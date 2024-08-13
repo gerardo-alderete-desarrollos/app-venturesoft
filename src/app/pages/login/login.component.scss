@@ -20,7 +20,7 @@
 }
 
 form {
-    width: 400px;
+    width: 70%;
 }
 
 
@@ -32,14 +32,16 @@ form {
     .sidenav {padding-top: 15px;}
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 767px) {
     .login-form{
-        //margin-top: 10%;
+        height: 25vh;
     }
 
     .register-form{
         margin-top: 10%;
     }
+
+
 }
 
 @media screen and (min-width: 768px){
