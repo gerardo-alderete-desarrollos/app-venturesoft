@@ -31,4 +31,6 @@ export const fr = {
     "cash_back": "reembolso",
     "marca": "marque",
     "description": "descripción",
+    "loading":"Chargement...",
+
 }
