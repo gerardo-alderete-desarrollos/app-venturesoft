@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable, Subject } from 'rxjs';
+import { catchError, EMPTY, forkJoin, Observable, Subject } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
+import Swal from 'sweetalert2';
 import { environment } from '../../environments/environment.development';
 import { IMenuResponse } from '../interfaces/IResponse';
 
@@ -18,11 +19,19 @@ export class DataService {
   }
 
   getCategorias(): Observable<IMenuResponse> {
-    return this._httpClient.get<IMenuResponse>(`${environment.baseUrl}${environment.categorias}`);
+    return this._httpClient.get<IMenuResponse>(`${environment.baseUrl}${environment.categorias}`).pipe(catchError((error) => {
+      this.toast(error.message)
+      return EMPTY;
+    }))
   }
 
   getMarcas(idMenu: number): Observable<IMenuResponse> {
-    return this._httpClient.get<IMenuResponse>(`${environment.baseUrl}${environment.marcas}?idMenu=${idMenu}`);
+    let params: HttpParams = new HttpParams().set("idMenu", idMenu);
+
+    return this._httpClient.get<IMenuResponse>(`${environment.baseUrl}${environment.marcas}`,{params}).pipe(catchError((error) => {
+      this.toast(error.message)
+      return EMPTY;
+    }))
   }
 
   async getMarcasRandom(idsMenu: number[]) {
@@ -61,6 +70,16 @@ export class DataService {
     this.languague.next(languague);
   }
 
+  toast(message: string) {
+    Swal.fire({
+      title: "Error",
+      text: message,
+      showCancelButton: false,
+      showConfirmButton: false,
+      icon: 'error',
+      timer: 2000
+    });
+  }
 
 
 }

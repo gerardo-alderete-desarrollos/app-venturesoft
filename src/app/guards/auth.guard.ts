@@ -1,19 +1,15 @@
-import { Injectable } from '@angular/core';
-import { CanMatch, GuardResult, MaybeAsync, Route, Router, UrlSegment } from '@angular/router';
+import { inject } from '@angular/core';
+import { CanMatchFn, Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthGuard implements CanMatch {
-  canMatch(
-    route: Route,
-    segments: UrlSegment[]): MaybeAsync<GuardResult> {
-    if( window.localStorage.getItem('isLogged') ) {
-      return true
-    }
-    
-    return this._router.navigateByUrl('login');
+export const authGuard: CanMatchFn = (route, segments) => {
+  const router = inject(Router);
+
+  if( window.localStorage.getItem('isLogged') ) {
+    return true
   }
+  router.navigateByUrl('login')
+  return false;
+};
 
-  constructor(private _router: Router){}
-}
+
+

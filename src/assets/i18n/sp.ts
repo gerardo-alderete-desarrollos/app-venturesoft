@@ -31,4 +31,6 @@ export const sp: any = {
     "cash_back": "reembolso",
     "marca": "marca",
     "description": "descripción",
+    "loading":"Cargando...",
+
 }

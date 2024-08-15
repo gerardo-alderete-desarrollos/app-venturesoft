@@ -1,8 +1,9 @@
 <div class="container">
     <h2 class="text-center">{{ ('title_menu' | i18n) | titlecase }}</h2>
     <div>
-        @for (mi of categories; track mi) {
-        <span id="badge{{mi.idMenu}}" class="badge" (click)="emitClick(mi.idMenu)">{{ mi['descripción']
+        @for (mi of categories; track mi.idMenu; let idx = $index) {
+        <span id="badge{{mi.idMenu}}" class="badge" [ngClass]="{'active' : idx == 0}" (click)="emitClick(mi.idMenu)">{{
+            mi['descripción']
             }}</span>
         }
     </div>

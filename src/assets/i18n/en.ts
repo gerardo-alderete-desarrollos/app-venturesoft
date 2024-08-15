@@ -31,5 +31,5 @@ export const en = {
     "cash_back": "cashback",
     "marca": "brand",
     "description": "description",
-    
+    "loading":"Loading...",
 }

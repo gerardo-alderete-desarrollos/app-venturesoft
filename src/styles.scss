@@ -144,7 +144,8 @@ td:first-child { text-align: left; }
     margin: 40px 0 70px 0;
 }
 
-@media (min-width: 370px) {
+
+@media (max-width: 370px) {
     .grid-marcas {
         grid-template-columns: 1fr; 
     }
